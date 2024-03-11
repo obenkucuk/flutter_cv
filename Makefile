@@ -2,17 +2,17 @@
 
 # Makefile for deploying the Flutter web projects to GitHub
 
-BASE_HREF = /$(OUTPUT)/
+# BASE_HREF = /$(OUTPUT)/
 # Replace this with your GitHub username
 GITHUB_USER = obenkucuk
-GITHUB_REPO = https://github.com/$(GITHUB_USER)/$(OUTPUT)
+GITHUB_REPO = git@github.com:obenkucuk/cv.git
 BUILD_VERSION := $(shell grep 'version:' pubspec.yaml | awk '{print $$2}')
 
 # Deploy the Flutter web project to GitHub
-deploy:
-ifndef OUTPUT
-  $(error OUTPUT is not set. Usage: make deploy OUTPUT=<output_repo_name>)
-endif
+deploy-web:
+# ifndef OUTPUT
+#   $(error OUTPUT is not set. Usage: make deploy OUTPUT=<output_repo_name>)
+# endif
 
   @echo "Clean existing repository"
   flutter clean
@@ -34,8 +34,9 @@ endif
   git branch -M main && \
   git remote add origin $(GITHUB_REPO) && \
   git push -u -f origin main
+  cd ../..
 
   @echo "✅ Finished deploy: $(GITHUB_REPO)"
   @echo "🚀 Flutter web URL: https://$(GITHUB_USER).github.io/$(OUTPUT)/"
 
-.PHONY: deploy
+.PHONY: deploy-web
