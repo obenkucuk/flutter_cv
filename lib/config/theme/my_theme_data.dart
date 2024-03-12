@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'my_colors.dart';
 
@@ -58,6 +59,17 @@ final class MyThemeData extends Equatable {
         space: 0,
         indent: 0,
         endIndent: 0,
+      ),
+
+      appBarTheme: const AppBarTheme(
+        elevation: 0,
+        surfaceTintColor: Colors.transparent,
+        titleTextStyle: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w600,
+          color: Colors.black,
+        ),
+        iconTheme: IconThemeData(color: Colors.black, size: 24),
       ),
 
       drawerTheme: DrawerThemeData(

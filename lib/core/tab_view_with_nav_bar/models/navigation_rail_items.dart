@@ -4,19 +4,19 @@ enum NavigationRailItems {
   about,
   education,
   experiences,
-  portfolio;
+  cookbook;
 
   String get label => switch (this) {
         about => 'About',
         education => 'Education',
         experiences => 'Experience',
-        portfolio => 'Portfolio'
+        cookbook => 'Cookbook'
       };
 
   MyIcons get icon => switch (this) {
         about => MyIcons.user,
         education => MyIcons.graduationCap,
         experiences => MyIcons.corporateAlt,
-        portfolio => MyIcons.suitcaseAlt
+        cookbook => MyIcons.suitcaseAlt
       };
 }

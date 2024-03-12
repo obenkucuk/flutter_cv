@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
-import '../../../config/device_type.dart';
+import '../../../config/screen_type.dart';
 import '../models/navigation_rail_items.dart';
 import 'my_info_widget.dart';
 import 'navigation_tab_item.dart';

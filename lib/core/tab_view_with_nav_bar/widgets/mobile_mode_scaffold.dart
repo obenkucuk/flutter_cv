@@ -66,25 +66,32 @@ final class MobileModeScaffold extends StatelessWidget {
               ),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: NavigationRailItems.values.mapIndexed((index, tab) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: NavigationTabItem(
-                  axis: Axis.horizontal,
-                  onTap: onTap,
-                  tab: tab,
-                  currentIndex: currentIndex,
-                  index: index,
-                ),
-              );
-            }).toList(),
-          ),
           Expanded(
             child: AnimatedBranchContainer(
               currentIndex: currentIndex,
               children: children,
+            ),
+          ),
+          SafeArea(
+            child: Column(
+              children: [
+                const Divider(thickness: 0.5),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: NavigationRailItems.values.mapIndexed((index, tab) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                      child: NavigationTabItem(
+                        axis: Axis.horizontal,
+                        onTap: onTap,
+                        tab: tab,
+                        currentIndex: currentIndex,
+                        index: index,
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ],
             ),
           ),
         ],

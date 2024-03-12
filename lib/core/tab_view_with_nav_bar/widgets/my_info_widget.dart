@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../components/my_selectable_text.dart';
 import '../../../config/theme/text_styles.dart';
-import '../../../features/education/widgets/education_item_widget.dart';
 import '../models/social_media_accounts.dart';
 
 @immutable

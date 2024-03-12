@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../components/gradient_text.dart';
-import '../../../config/device_type.dart';
+import '../../../components/my_selectable_text.dart';
+import '../../../config/screen_type.dart';
 import '../../../config/theme/text_styles.dart';
 
 class AboutView extends StatelessWidget {
@@ -46,14 +47,10 @@ class AboutView extends StatelessWidget {
               style: s24W700.copyWith(fontSize: screenType == ScreenType.desktop ? 80 : 40),
             ),
             SizedBox(height: 16.h),
-            Text(
-              "My name is Oben Küçük, I'm a mobile developer based in Istanbul, TR. I have developed many types of mobile application from crypto-trading platform to music player for any kind of platforms.",
+            MySelectableText(
+              "My name is Oben Küçük, I'm a mobile developer based in Istanbul, TR. I have developed many types of mobile application from crypto-trading platform to music player for any kind of platforms.\n\nI'm passionate about cutting-edge technologies and challenges. I'm always looking for new opportunities to improve my skills and learn new things.",
               style: s18W500,
-            ),
-            SizedBox(height: 16.h),
-            Text(
-              "I'm passionate about cutting-edge technologies and challenges. I'm always looking for new opportunities to improve my skills and learn new things.",
-              style: s18W500,
+              maxLines: null,
             ),
           ],
         );

@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../config/device_type.dart';
-import '../../../config/theme/provider/provider.dart';
+import '../../../config/screen_type.dart';
 import '../widgets/desktop_mode_scaffold.dart';
 import '../widgets/mobile_mode_scaffold.dart';
 
@@ -47,33 +45,6 @@ class TabViewWithNavBar extends StatelessWidget {
             ),
         };
       },
-    );
-  }
-}
-
-class PortfolioView extends ConsumerWidget {
-  const PortfolioView({
-    required this.label,
-    super.key,
-  });
-
-  final String label;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Center(
-      key: const Key('OrdersPageView'),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CupertinoButton(
-            child: const Text('Change'),
-            onPressed: () {
-              ref.read(myThemeProvider.notifier).changeTheme();
-            },
-          ),
-        ],
-      ),
     );
   }
 }

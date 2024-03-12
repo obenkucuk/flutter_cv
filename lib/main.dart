@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
@@ -8,7 +9,8 @@ import 'config/theme/provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  usePathUrlStrategy();
+
+  if (!kDebugMode) usePathUrlStrategy();
   runApp(const ProviderScope(child: MyApp()));
 }
 

@@ -1,6 +1,6 @@
 part of '../../main_shell.dart';
 
-const _notificationShellBranchData = TypedStatefulShellBranch<ExperienceShellBranchData>(
+const _experienceShellBranchData = TypedStatefulShellBranch<ExperienceShellBranchData>(
   routes: <TypedRoute<RouteData>>[
     TypedGoRoute<ExperienceRouteData>(
       path: '/experience',

@@ -36,7 +36,12 @@ final class NavigationTabItem extends StatelessWidget {
             IntrinsicWidth(
               child: Column(
                 children: [
-                  tab.icon.toWidget(size: 18),
+                  tab.icon.toWidget(
+                    size: 18,
+                    color: index == currentIndex
+                        ? Theme.of(context).textTheme.bodySmall?.color
+                        : primaryColor,
+                  ),
                   SizedBox(width: 4.w),
                   Text(
                     tab.label.toLowerCase(),

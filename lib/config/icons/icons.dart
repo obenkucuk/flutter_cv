@@ -11,6 +11,7 @@ enum MyIcons {
   suitcaseAlt,
   menuBurger,
   user,
+  qr404,
 
   //* University
   bounLogo,
