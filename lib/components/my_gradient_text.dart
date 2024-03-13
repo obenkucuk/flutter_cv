@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 @immutable
-final class GradientText extends HookWidget {
+final class MyGradientText extends HookWidget {
   final String data;
   final TextStyle style;
 
-  const GradientText(
+  const MyGradientText(
     this.data, {
     super.key,
     required this.style,

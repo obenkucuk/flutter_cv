@@ -44,10 +44,10 @@ enum Experiences {
   String get location {
     switch (this) {
       case Experiences.marginCoins:
-        return 'Istanbul, Nov 2022-';
+        return 'Istanbul, Aug 2022-Nov 2022';
 
       case Experiences.icrypex:
-        return 'Istanbul, Aug 2022-Nov 2022';
+        return 'Istanbul, Nov 2022-';
 
       case Experiences.freelance:
         return 'Istanbul, Nov 2020-Aug 2022';

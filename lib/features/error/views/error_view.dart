@@ -1,12 +1,5 @@
-import 'dart:math';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'dart:ui' as UI;
-
-import 'package:flutter/material.dart';
+// import 'dart:ui' as UI;
 
 class ErrorView extends StatelessWidget {
   const ErrorView({
@@ -17,60 +10,60 @@ class ErrorView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Planets();
 
-    return Scaffold(
-      body: Builder(
-        builder: (context) {
-          return const Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // MyIcons.qr404
-              //     .toWidget(size: 400, isColorful: true)
-              //     .animate(
-              //       onPlay: (controller) => controller.repeat(),
-              //     )
-              //     .shimmer(
-              //       duration: const Duration(seconds: 2),
-              //       color: Theme.of(context).primaryColor,
-              //     ),
+    // return Scaffold(
+    //   body: Builder(
+    //     builder: (context) {
+    //       return const Column(
+    //         mainAxisAlignment: MainAxisAlignment.center,
+    //         children: [
+    //           // MyIcons.qr404
+    //           //     .toWidget(size: 400, isColorful: true)
+    //           //     .animate(
+    //           //       onPlay: (controller) => controller.repeat(),
+    //           //     )
+    //           //     .shimmer(
+    //           //       duration: const Duration(seconds: 2),
+    //           //       color: Theme.of(context).primaryColor,
+    //           //     ),
 
-              // Column(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   crossAxisAlignment: CrossAxisAlignment.start,
-              //   children: [
-              //     ColoredBox(
-              //       color: Colors.indigo,
-              //       child: Row(
-              //         textBaseline: TextBaseline.ideographic,
-              //         crossAxisAlignment: CrossAxisAlignment.baseline,
-              //         children: [
-              //           Text('4', style: s24W300.copyWith(fontSize: 80)),
-              //           Text('0', style: s24W300.copyWith(fontSize: 60)),
-              //           Text('4', style: s24W300.copyWith(fontSize: 80)),
-              //         ],
-              //       ),
-              //     ),
-              //     Text('Oppps!\nPage not found', style: s24W700.copyWith(fontSize: 30)),
-              //     CupertinoButton(
-              //       padding: EdgeInsets.zero,
-              //       child: DecoratedBox(
-              //         decoration: BoxDecoration(
-              //           borderRadius: BorderRadius.circular(500),
-              //           border: Border.all(color: Theme.of(context).primaryColor),
-              //         ),
-              //         child: const Padding(
-              //           padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              //           child: Text('Take me home'),
-              //         ),
-              //       ),
-              //       onPressed: () => const AboutRoute().go(context),
-              //     ),
-              //   ],
-              // ),
-            ],
-          );
-        },
-      ),
-    );
+    //           // Column(
+    //           //   mainAxisAlignment: MainAxisAlignment.center,
+    //           //   crossAxisAlignment: CrossAxisAlignment.start,
+    //           //   children: [
+    //           //     ColoredBox(
+    //           //       color: Colors.indigo,
+    //           //       child: Row(
+    //           //         textBaseline: TextBaseline.ideographic,
+    //           //         crossAxisAlignment: CrossAxisAlignment.baseline,
+    //           //         children: [
+    //           //           Text('4', style: s24W300.copyWith(fontSize: 80)),
+    //           //           Text('0', style: s24W300.copyWith(fontSize: 60)),
+    //           //           Text('4', style: s24W300.copyWith(fontSize: 80)),
+    //           //         ],
+    //           //       ),
+    //           //     ),
+    //           //     Text('Oppps!\nPage not found', style: s24W700.copyWith(fontSize: 30)),
+    //           //     CupertinoButton(
+    //           //       padding: EdgeInsets.zero,
+    //           //       child: DecoratedBox(
+    //           //         decoration: BoxDecoration(
+    //           //           borderRadius: BorderRadius.circular(500),
+    //           //           border: Border.all(color: Theme.of(context).primaryColor),
+    //           //         ),
+    //           //         child: const Padding(
+    //           //           padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+    //           //           child: Text('Take me home'),
+    //           //         ),
+    //           //       ),
+    //           //       onPressed: () => const AboutRoute().go(context),
+    //           //     ),
+    //           //   ],
+    //           // ),
+    //         ],
+    //       );
+    //     },
+    //   ),
+    // );
   }
 }
 

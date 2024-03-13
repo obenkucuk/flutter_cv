@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../components/gradient_text.dart';
+import '../../../components/my_gradient_text.dart';
 import '../../../components/my_selectable_text.dart';
 import '../../../config/screen_type.dart';
 import '../../../config/theme/text_styles.dart';
@@ -42,7 +42,7 @@ class AboutView extends StatelessWidget {
               ],
             ),
             SizedBox(height: 16.h),
-            GradientText(
+            MyGradientText(
               'Welcome',
               style: s24W700.copyWith(fontSize: screenType == ScreenType.desktop ? 80 : 40),
             ),

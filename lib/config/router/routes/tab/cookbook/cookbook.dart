@@ -10,6 +10,10 @@ const _cookbookShellBranchData = TypedStatefulShellBranch<CookbookShellBranchDat
           path: 'stretchy_header',
           name: 'Stretchy Header',
         ),
+        TypedGoRoute<OverlapHeaderTabBarRoute>(
+          path: 'overlap_header_tab_bar',
+          name: 'Overlap Header Tab Bar',
+        ),
       ],
     ),
   ],
@@ -36,5 +40,16 @@ class StretchyHeaderRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return const StretchyHeaderView();
+  }
+}
+
+class OverlapHeaderTabBarRoute extends GoRouteData {
+  const OverlapHeaderTabBarRoute();
+
+  static GlobalKey<NavigatorState> $parentNavigatorKey = navigatorKey;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const OverlapHeaderTabBarView();
   }
 }
