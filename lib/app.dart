@@ -8,7 +8,6 @@ import 'config/theme/provider/provider.dart';
 
 class MyApp extends ConsumerWidget {
   final FlavorModel flavorModel;
-
   const MyApp({super.key, required this.flavorModel});
 
   @override
