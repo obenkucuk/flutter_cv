@@ -223,7 +223,7 @@ class ScrollAbsorber {
     if (notification is OverscrollNotification) {
       if (notification.metrics.axis == Axis.vertical) {
         scrolled = notification.overscroll;
-        print('overscroll: $scrolled');
+        // print('overscroll: $scrolled');
       }
     }
 

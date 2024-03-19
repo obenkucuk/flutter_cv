@@ -1,21 +1,17 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'config/flavor/flavor_model.dart';
 import 'config/router/go_router_provider.dart';
 import 'config/theme/provider/provider.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  if (!kDebugMode) usePathUrlStrategy();
-  runApp(const ProviderScope(child: MyApp()));
-}
-
 class MyApp extends ConsumerWidget {
-  const MyApp({super.key});
+  final FlavorModel flavorModel;
+  const MyApp({
+    super.key,
+    required this.flavorModel,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -29,9 +25,9 @@ class MyApp extends ConsumerWidget {
     final goRouter = ref.watch(goRouterProvider);
 
     return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: flavorModel.debugShowCheckedModeBanner,
       routerConfig: goRouter,
-      title: 'Flutter Demo',
+      title: flavorModel.name,
       theme: myThemeState.myThemeData.light,
       darkTheme: myThemeState.myThemeData.dark,
       themeMode: myThemeState.themeMode,
