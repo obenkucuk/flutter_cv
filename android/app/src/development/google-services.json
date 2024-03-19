@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "693538014886",
+    "project_id": "obenkucuk-cv-dev-902e0",
+    "storage_bucket": "obenkucuk-cv-dev-902e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693538014886:android:83b2188b25de4723bb1667",
+        "android_client_info": {
+          "package_name": "com.obenkucuk.cv.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBavuOpki0g51YK0WWln7hZfb6Gm2TzHXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
