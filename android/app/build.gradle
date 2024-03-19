@@ -51,26 +51,26 @@ android {
         versionName flutterVersionName
     }
 
-     flavorDimensions "default"
+       flavorDimensions "default"
     
-     productFlavors {
+    productFlavors {
         production {
             dimension "default"
-            resValue "string", "app_name","Github CV Example"
+            resValue "string", "app_name","Github CV"
             applicationIdSuffix ""
             // signingConfig signingConfigs.productionRelease
            
         }
         staging {
             dimension "default"
-            resValue "string", "app_name","Github CV Example Stg"
+            resValue "string", "app_name","Github CV Stg"
             applicationIdSuffix ".stg"
             // signingConfig signingConfigs.stagingRelease
             versionNameSuffix "-stg"
         }
         development {
             dimension "default"
-            resValue "string", "app_name","Github CV Example Dev"
+            resValue "string", "app_name","Github CV Dev"
             applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
         }

@@ -1,15 +1,13 @@
 // ignore_for_file: constant_identifier_names
 
-enum FlavorType { DEVELOPMENT, PRODUCTION, STAGING }
+import 'package:cv/config/flavor/flavors.dart';
 
-class FlavorModel {
-  final FlavorType flavorType;
+final class FlavorModel {
+  final Flavors flavor;
   final String name;
-  final bool debugShowCheckedModeBanner;
 
   const FlavorModel({
-    required this.flavorType,
+    required this.flavor,
     required this.name,
-    this.debugShowCheckedModeBanner = false,
   });
 }

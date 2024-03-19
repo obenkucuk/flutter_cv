@@ -8,10 +8,8 @@ import 'config/theme/provider/provider.dart';
 
 class MyApp extends ConsumerWidget {
   final FlavorModel flavorModel;
-  const MyApp({
-    super.key,
-    required this.flavorModel,
-  });
+
+  const MyApp({super.key, required this.flavorModel});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -24,15 +22,26 @@ class MyApp extends ConsumerWidget {
     final myThemeState = ref.watch(myThemeProvider);
     final goRouter = ref.watch(goRouterProvider);
 
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: flavorModel.debugShowCheckedModeBanner,
-      routerConfig: goRouter,
-      title: flavorModel.name,
-      theme: myThemeState.myThemeData.light,
-      darkTheme: myThemeState.myThemeData.dark,
-      themeMode: myThemeState.themeMode,
-      themeAnimationCurve: Curves.easeInOutCubicEmphasized,
-      themeAnimationDuration: const Duration(milliseconds: 500),
+    final bannerPainter = BannerPainter(
+      message: flavorModel.flavor.bannerName,
+      textDirection: TextDirection.ltr,
+      location: BannerLocation.topEnd,
+      layoutDirection: TextDirection.ltr,
+      color: flavorModel.flavor.bannerColor,
+    );
+
+    return CustomPaint(
+      foregroundPainter: flavorModel.flavor.debugShowCheckedModeBanner ? bannerPainter : null,
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: flavorModel.flavor.debugShowCheckedModeBanner,
+        routerConfig: goRouter,
+        title: flavorModel.name,
+        theme: myThemeState.myThemeData.light,
+        darkTheme: myThemeState.myThemeData.dark,
+        themeMode: myThemeState.themeMode,
+        themeAnimationCurve: Curves.easeInOutCubicEmphasized,
+        themeAnimationDuration: const Duration(milliseconds: 500),
+      ),
     );
   }
 }
