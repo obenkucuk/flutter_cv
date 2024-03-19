@@ -56,21 +56,21 @@ android {
     productFlavors {
         production {
             dimension "default"
-            resValue "string", "app_name","Github CV"
+            resValue "string", "app_name","obenkucuk CV"
             applicationIdSuffix ""
             // signingConfig signingConfigs.productionRelease
            
         }
         staging {
             dimension "default"
-            resValue "string", "app_name","Github CV Stg"
+            resValue "string", "app_name","obenkucuk CV Stg"
             applicationIdSuffix ".stg"
             // signingConfig signingConfigs.stagingRelease
             versionNameSuffix "-stg"
         }
         development {
             dimension "default"
-            resValue "string", "app_name","Github CV Dev"
+            resValue "string", "app_name","obenkucuk CV Dev"
             applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
         }
