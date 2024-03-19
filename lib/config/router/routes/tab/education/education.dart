@@ -5,12 +5,12 @@ const _educationShellBranchData = TypedStatefulShellBranch<EducationShellBranchD
     TypedGoRoute<EducationRoute>(
       path: '/education',
       name: 'Education',
-      routes: [
-        // TypedGoRoute<AnimeDetailRoute>(
-        //   path: ':malId',
-        //   name: 'Anime Detail',
-        // ),
-      ],
+      // routes: [
+      //   TypedGoRoute<AnimeDetailRoute>(
+      //     path: ':malId',
+      //     name: 'Anime Detail',
+      //   ),
+      // ],
     ),
   ],
 );

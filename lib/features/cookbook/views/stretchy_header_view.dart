@@ -121,6 +121,7 @@ class _DetailsAppBar extends HookConsumerWidget {
             child: Image.network(image, fit: BoxFit.cover),
           ),
         ),
+        // ignore: avoid_redundant_argument_values
         collapseMode: CollapseMode.parallax,
         stretchModes: const [
           StretchMode.zoomBackground,

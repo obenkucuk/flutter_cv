@@ -8,7 +8,7 @@ class ErrorView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Planets();
+    return const _Planets();
 
     // return Scaffold(
     //   body: Builder(
@@ -67,16 +67,14 @@ class ErrorView extends StatelessWidget {
   }
 }
 
-class Planets extends StatefulWidget {
-  const Planets({
-    super.key,
-  });
+class _Planets extends StatefulWidget {
+  const _Planets();
 
   @override
   _PlanetsState createState() => _PlanetsState();
 }
 
-class _PlanetsState extends State<Planets> with TickerProviderStateMixin {
+class _PlanetsState extends State<_Planets> with TickerProviderStateMixin {
   late AnimationController _controller;
   late AnimationController _controller1;
   late AnimationController _controller2;
@@ -86,15 +84,15 @@ class _PlanetsState extends State<Planets> with TickerProviderStateMixin {
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
     );
     _controller1 = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 4),
+      duration: const Duration(seconds: 4),
     );
     _controller2 = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 5),
+      duration: const Duration(seconds: 5),
     );
   }
 

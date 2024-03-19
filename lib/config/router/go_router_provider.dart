@@ -34,7 +34,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
       $mainShellRouteData,
     ],
     errorBuilder: (context, state) {
-      return ErrorView();
+      return const ErrorView();
     },
   );
 });

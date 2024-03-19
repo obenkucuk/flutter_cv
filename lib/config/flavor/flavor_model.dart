@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:cv/config/flavor/flavors.dart';
+import 'flavors.dart';
 
 final class FlavorModel {
   final Flavors flavor;
