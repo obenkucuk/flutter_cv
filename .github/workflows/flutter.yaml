@@ -38,7 +38,7 @@ jobs:
         id: latest_tag_info
         run: |
           latest_tag=$(git tag -l --sort=-version:refname | head -n1)
-          tag_info=$(git for-each-ref --format '%(contents)' refs/tags/$latest_tag)
+          tag_info=$(git tag -l --sort=-version:refname --format '%(message)' | head -n1)
           latest_commit_message=$(git log --format=%B -n 1 $latest_tag)
 
           echo "latest_tag=$latest_tag" >> $GITHUB_OUTPUT
@@ -53,28 +53,28 @@ jobs:
           echo ----
           echo "Son Commit Mesajı: ${{ steps.latest_tag_info.outputs.latest_commit_message }}"
 
-      - name: ⚙️ Setup Java
-        uses: actions/setup-java@v3
-        id: java
-        with:
-          distribution: "zulu"
-          java-version: "12.x"
-          cache: "gradle"
+      # - name: ⚙️ Setup Java
+      #   uses: actions/setup-java@v3
+      #   id: java
+      #   with:
+      #     distribution: "zulu"
+      #     java-version: "12.x"
+      #     cache: "gradle"
 
-      - name: ⚙️ Setup Flutter
-        uses: subosito/flutter-action@v2
-        id: flutter
-        with:
-          flutter-version: ${{ steps.version.outputs.flutter }}
-          channel: "stable"
-          cache: true
+      # - name: ⚙️ Setup Flutter
+      #   uses: subosito/flutter-action@v2
+      #   id: flutter
+      #   with:
+      #     flutter-version: ${{ steps.version.outputs.flutter }}
+      #     channel: "stable"
+      #     cache: true
 
-      - name: Get Flutter SDK Path
-        id: flutter_path
-        run: |
-          FLUTTER_PATH=$(which flutter)
-          FLUTTER_DIR=$(dirname $(dirname $FLUTTER_PATH))
-          echo "flutter_directory=$FLUTTER_DIR" >> $GITHUB_OUTPUT
+      # - name: Get Flutter SDK Path
+      #   id: flutter_path
+      #   run: |
+      #     FLUTTER_PATH=$(which flutter)
+      #     FLUTTER_DIR=$(dirname $(dirname $FLUTTER_PATH))
+      #     echo "flutter_directory=$FLUTTER_DIR" >> $GITHUB_OUTPUT
 
       # - name: 📦🚀 Install Melos
       #   id: melos
