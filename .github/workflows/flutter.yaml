@@ -33,7 +33,7 @@ jobs:
         run: |
           flutter=$(./scripts/fvm_version.sh)
           echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
-          $(./scripts/fvm_version.sh)
+          echo $(./scripts/fvm_version.sh)
 
       - name: ⚙️ Setup Java
         uses: actions/setup-java@v3
