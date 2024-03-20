@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v1.0.11`](#cv---v1011)
+
+---
+
+#### `cv` - `v1.0.11`
+
+ - **FIX**: fix added for melos.
+
+
+## 2024-03-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v1.0.10`](#cv---v1010)
 
 ---

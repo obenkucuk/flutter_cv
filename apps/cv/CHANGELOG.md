@@ -1,3 +1,7 @@
+## 1.0.11
+
+ - **FIX**: fix added for melos.
+
 ## 1.0.10
 
  - **FIX**(deploy): deploy deneme.
