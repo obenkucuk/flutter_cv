@@ -1,3 +1,7 @@
+## 1.0.22
+
+ - **FIX**: COMMIT MESSAGE.
+
 ## 1.0.21
 
  - **FIX**: ANANI.
