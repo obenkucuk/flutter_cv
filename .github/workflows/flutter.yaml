@@ -27,6 +27,8 @@ jobs:
         run: |
           flutter=$(./scripts/fvm_version.sh)
           echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
+          echo "Ref: $GITHUB_REF"
+          echo "Commit Message: $GITHUB_COMMIT_MESSAGE"
 
       - name: ⚙️ Setup Java
         uses: actions/setup-java@v3
