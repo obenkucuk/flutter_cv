@@ -1,0 +1,4 @@
+name: cv_monorepo_melos
+
+packages:
+  - apps/**
