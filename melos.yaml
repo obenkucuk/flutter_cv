@@ -1,4 +1,5 @@
 name: cv_monorepo_melos
+sdkPath: .fvm/flutter_sdk
 
 packages:
   - apps/**
