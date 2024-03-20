@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v1.0.7`](#cv---v107)
+
+---
+
+#### `cv` - `v1.0.7`
+
+ - **FIX**: flutter main deneme fix.
+
+
+## 2024-03-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v1.0.6`](#cv---v106)
 
 ---

@@ -1,3 +1,7 @@
+## 1.0.7
+
+ - **FIX**: flutter main deneme fix.
+
 ## 1.0.6
 
  - **FIX**: amk pods u.
