@@ -1,3 +1,7 @@
+## 1.0.20
+
+ - **FIX**: son etiket mesajı fix.
+
 ## 1.0.19
 
  - **FIX**: AMK.
