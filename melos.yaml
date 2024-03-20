@@ -5,9 +5,9 @@ sdkPath: .fvm/flutter_sdk
 command:
   version:
     # Generate commit links in package changelogs.
-    linkToCommits: true
+    # linkToCommits: true
     # # Only allow versioning to happen on main branch.
-    branch: master
+    branch: main
     # Additionally build a changelog at the root of the workspace.
     workspaceChangelog: true
 

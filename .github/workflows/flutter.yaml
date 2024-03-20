@@ -30,6 +30,10 @@ jobs:
           echo "Ref: $GITHUB_REF"
           echo "Commit Message: $GITHUB_COMMIT_MESSAGE"
           echo "Commit Author: ${{ github.event.head_commit.message }}"
+          echo -------
+          echo 'annotation<<EOF'
+          git for-each-ref "${GITHUB_REF}" --format '%(contents)'
+          echo 'EOF'
 
       - name: ⚙️ Setup Java
         uses: actions/setup-java@v3
