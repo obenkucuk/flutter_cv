@@ -22,18 +22,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: 🏷️🧪 Get previous tag from GitHub tags
-        id: get_latest_dev_release
-        uses: "WyriHaximus/github-action-get-previous-tag@v1"
-        with:
-          fallback: 1.0.0
-
-      - name: 📦🚀 Calculate android package id and fvm flutter version
-        id: version
-        run: |
-          flutter=$(./scripts/fvm_version.sh)
-          echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
-
       - name: Get Latest Tag and Message
         id: latest_tag_info
         run: |
@@ -52,6 +40,23 @@ jobs:
           echo "Son Etiketin Mesajı: ${{ steps.latest_tag_info.outputs.tag_info }}"
           echo ----
           echo "Son Commit Mesajı: ${{ steps.latest_tag_info.outputs.latest_commit_message }}"
+
+      - name: Check Variable Value
+        if: ${{ contains(steps.latest_tag_info.outputs.latest_commit_message, 'deploy') }}
+        run: |
+          echo "Variable contains the desired value!"
+          # İşlemlerinizi buraya ekleyin...
+      - name: Variable Does Not Contain Value
+        if: ${{ !contains(steps.latest_tag_info.outputs.latest_commit_message, 'deploy') }}
+        run: |
+          echo "Variable does not contain the desired value."
+          # Farklı işlemlerinizi buraya ekleyin...
+
+      - name: 📦🚀 Calculate android package id and fvm flutter version
+        id: version
+        run: |
+          flutter=$(./scripts/fvm_version.sh)
+          echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
 
       # - name: ⚙️ Setup Java
       #   uses: actions/setup-java@v3
