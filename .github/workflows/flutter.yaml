@@ -50,7 +50,9 @@ jobs:
         run: |
           FLUTTER_PATH=$(which flutter)
           FLUTTER_DIR=$(dirname $(dirname $FLUTTER_PATH))
-          echo "flutter_director=$FLUTTER_DIR" >> $GITHUB_OUTPUT
+          # echo "::set-output name=flutter_directory::$FLUTTER_DIR"
+          # echo "::set-output name={name}::{value}"
+          echo "flutter_directory=$FLUTTER_DIR" >> $GITHUB_OUTPUT
 
       - name: PrintFlutterpath
         run: echo ${{ steps.flutter_path.outputs.flutter_directory }}
