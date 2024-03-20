@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v1.0.2`](#cv---v102)
+
+---
+
+#### `cv` - `v1.0.2`
+
+ - **FIX**: minor setting changes.
+
+
+## 2024-03-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v1.0.1`](#cv---v101)
 
 ---
