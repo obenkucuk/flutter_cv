@@ -1,3 +1,7 @@
+## 1.0.3
+
+ - **FIX**: comments added.
+
 ## 1.0.2
 
  - **FIX**: minor setting changes.
