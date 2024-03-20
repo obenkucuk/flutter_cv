@@ -29,6 +29,7 @@ jobs:
           echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
           echo "Ref: $GITHUB_REF"
           echo "Commit Message: $GITHUB_COMMIT_MESSAGE"
+          echo "Commit Author: ${{ github.event.head_commit.message }}"
 
       - name: ⚙️ Setup Java
         uses: actions/setup-java@v3
@@ -53,12 +54,12 @@ jobs:
           FLUTTER_DIR=$(dirname $(dirname $FLUTTER_PATH))
           echo "flutter_directory=$FLUTTER_DIR" >> $GITHUB_OUTPUT
 
-      - name: 📦🚀 Install Melos
-        id: melos
-        run: |
-          flutter pub global activate melos
+      # - name: 📦🚀 Install Melos
+      #   id: melos
+      #   run: |
+      #     flutter pub global activate melos
 
-      - name: 📦🚀 Install Melos
-        id: melos_version
-        run: |
-          melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} bs ; melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} version --all ; echo "y"
+      # - name: 📦🚀 Install Melos
+      #   id: melos_version
+      #   run: |
+      #     melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} bs ; melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} version --all ; echo "y"
