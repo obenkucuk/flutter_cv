@@ -24,31 +24,37 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: 📦🚀 Calculate android package id and fvm flutter version
-        id: calculate_package_id_flutter_version
+        id: version
         run: |
-          flutter_version=$(./scripts/fvm_version.sh)
-          echo "flutter_version=$flutter_version" >> $GITHUB_OUTPUT
+          flutter=$(./scripts/fvm_version.sh)
+          echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
 
       - name: ⚙️ Setup Java
         uses: actions/setup-java@v3
+        id: java
         with:
           distribution: "zulu"
           java-version: "12.x"
           cache: "gradle"
-        id: java
 
       - name: ⚙️ Setup Flutter
         uses: subosito/flutter-action@v2
+        id: flutter
         with:
-          flutter-version: ${{ steps.calculate_package_id_flutter_version.outputs.flutter_version }}
+          flutter-version: ${{ steps.version.outputs.flutter }}
           channel: "stable"
           cache: true
-        id: flutter
+
+      - name: 📦🚀 Get Flutter Sdk Path
+        id: SDKPath
+        run: |
+          which flutter
+          echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
 
       - name: 📦🚀 Install Melos
+        id: melos
         run: |
           flutter pub global activate melos
-        id: melos
 
       - name: 📦🚀 Install Melos
         run: |
