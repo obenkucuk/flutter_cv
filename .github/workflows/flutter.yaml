@@ -33,13 +33,7 @@ jobs:
         run: |
           flutter=$(./scripts/fvm_version.sh)
           echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
-          echo "Ref: $GITHUB_REF"
-          echo "Commit Message: $GITHUB_COMMIT_MESSAGE"
-          echo "Commit Author: ${{ github.event.head_commit.message }}"
-          echo -------
-          last_dev_release=$(echo "${{ steps.get_latest_dev_release.outputs.tag }}" | sed -E "s/release\/(.*)/\1/")
-          echo "${{ steps.get_latest_dev_release.outputs.tag }}"
-          echo "${{ steps.get_latest_dev_release.outputs.tag }}"
+          $(./scripts/fvm_version.sh)
 
       - name: ⚙️ Setup Java
         uses: actions/setup-java@v3
