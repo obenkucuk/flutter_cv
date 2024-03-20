@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # .fvmrc dosyasının yolunu kontrol et
-fvmrc_file=".fvmrc"
+fvmrc_file="./.fvmrc"
 
 if [ -f "$fvmrc_file" ]; then
     # .fvmrc dosyası varsa, içeriğini oku ve flutter sürümünü al
