@@ -1,3 +1,7 @@
+## 1.0.4
+
+ - **FIX**: app fixed.
+
 ## 1.0.3
 
  - **FIX**: comments added.
