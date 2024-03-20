@@ -1,3 +1,7 @@
+## 1.0.24
+
+ - **FIX**: cmmt message.
+
 ## 1.0.23
 
  - **FIX**: COMMRAD MESAJ.

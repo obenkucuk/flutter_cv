@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v1.0.24`](#cv---v1024)
+
+---
+
+#### `cv` - `v1.0.24`
+
+ - **FIX**: cmmt message.
+
+
+## 2024-03-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v1.0.23`](#cv---v1023)
 
 ---
