@@ -1,3 +1,7 @@
+## 1.0.15
+
+ - **FIX**: deneme tag message.
+
 ## 1.0.14
 
  - **FIX**: print tag deneme.
