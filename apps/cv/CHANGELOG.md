@@ -1,3 +1,7 @@
+## 1.0.14
+
+ - **FIX**: print tag deneme.
+
 ## 1.0.13
 
  - **FIX**: print tag.
