@@ -47,7 +47,7 @@ jobs:
 
       - name: 📦🚀 Install Melos
         run: |
-          flutter pub global activate melos || melos version --all
+          flutter pub global activate melos
         id: melos
 
       - name: 📦🚀 Install Melos
