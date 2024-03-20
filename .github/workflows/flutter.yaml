@@ -39,6 +39,7 @@ jobs:
           echo -------
           last_dev_release=$(echo "${{ steps.get_latest_dev_release.outputs.tag }}" | sed -E "s/release\/(.*)/\1/")
           echo "${{ steps.get_latest_dev_release.outputs.tag }}"
+          echo "${{ steps.get_latest_dev_release.outputs.tag }}"
 
       - name: ⚙️ Setup Java
         uses: actions/setup-java@v3
