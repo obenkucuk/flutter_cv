@@ -45,14 +45,14 @@ jobs:
           channel: "stable"
           cache: true
 
-      - name: GetFlutterpath
-        id: flutter_path
+      - name: Get Flutter Sdk Path
+        id: flutter_sdk_path
         run: |
           FLUTTER_PATH=$(which flutter)
           echo "::set-output name=flutter_path::$FLUTTER_PATH"
 
       - name: PrintFlutterpath
-        run: echo ${{ steps.flutter_path.outputs.flutter_path }}
+        run: echo ${{ steps.flutter_sdk_path.outputs.flutter_path }}
 
       - name: 📦🚀 Install Melos
         id: melos
@@ -61,5 +61,5 @@ jobs:
 
       - name: 📦🚀 Install Melos
         run: |
-          melos version --all
+          melos version --sdk-path ${{ steps.flutter_sdk_path.outputs.flutter_path }} --all
         id: melos_version
