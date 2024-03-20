@@ -22,7 +22,7 @@ jobs:
       - name: 📦🚀 Calculate android package id and fvm flutter version
         id: calculate_package_id_flutter_version
         run: |
-          flutter_version=$(./scripts/get_flutter_version.sh)
+          flutter_version=$(./scripts/fvm_version.sh)
           echo "flutter_version=$flutter_version" >> $GITHUB_OUTPUT
 
       - name: ⚙️ Setup Java
