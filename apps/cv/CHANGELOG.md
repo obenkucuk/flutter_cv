@@ -1,3 +1,7 @@
+## 1.0.18
+
+ - **FIX**: tag mesaj tekrar ayarlandı.
+
 ## 1.0.17
 
  - **FIX**: niye çalışmadı.
