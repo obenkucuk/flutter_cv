@@ -1,3 +1,7 @@
+## 1.0.13
+
+ - **FIX**: print tag.
+
 ## 1.0.12
 
  - **FIX**: commit message print deneme.

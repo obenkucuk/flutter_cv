@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v1.0.13`](#cv---v1013)
+
+---
+
+#### `cv` - `v1.0.13`
+
+ - **FIX**: print tag.
+
+
+## 2024-03-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v1.0.12`](#cv---v1012)
 
 ---
