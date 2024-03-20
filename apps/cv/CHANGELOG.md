@@ -1,3 +1,7 @@
+## 1.0.23
+
+ - **FIX**: COMMRAD MESAJ.
+
 ## 1.0.22
 
  - **FIX**: COMMIT MESSAGE.
