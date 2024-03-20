@@ -1,3 +1,7 @@
+## 1.0.8
+
+ - **FIX**: check changelog.
+
 ## 1.0.7
 
  - **FIX**: flutter main deneme fix.
