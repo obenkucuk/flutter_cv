@@ -9,9 +9,8 @@ permissions: write-all
 
 on:
   push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+    tags:
+      - "*"
 
 jobs:
   Bu_sadece_isim:
