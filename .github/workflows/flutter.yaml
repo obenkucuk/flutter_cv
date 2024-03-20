@@ -38,16 +38,16 @@ jobs:
         id: latest_tag_info
         run: |
           latest_tag=$(git tag -l --sort=-version:refname | head -n1)
-          latest_tag_message=$(git for-each-ref --format '%(contents)' refs/tags/$latest_tag)
+          tag_info=$(git show $latest_tag --format='%B' --no-patch)
           latest_commit_message=$(git log --format=%B -n 1 $latest_tag)
           echo "::set-output name=latest_tag::$latest_tag"
-          echo "::set-output name=latest_tag_message::$latest_tag_message"
+          echo "::set-output name=tag_info::$tag_info"
           echo "::set-output name=latest_commit_message::$latest_commit_message"
 
       - name: Use the outputs
         run: |
           echo "Son Etiket: ${{ steps.latest_tag_info.outputs.latest_tag }}"
-          echo "Son Etiketin Mesajı: ${{ steps.latest_tag_info.outputs.latest_tag_message }}"
+          echo "Son Etiketin Mesajı: ${{ steps.latest_tag_info.outputs.tag_info }}"
           echo "Son Commit Mesajı: ${{ steps.latest_tag_info.outputs.latest_commit_message }}"
 
       - name: ⚙️ Setup Java
