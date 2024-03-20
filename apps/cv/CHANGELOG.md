@@ -1,3 +1,7 @@
+## 1.0.12
+
+ - **FIX**: commit message print deneme.
+
 ## 1.0.11
 
  - **FIX**: fix added for melos.
