@@ -60,4 +60,4 @@ jobs:
       - name: 📦🚀 Install Melos
         id: melos_version
         run: |
-          melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} bs ; melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} version --all
+          melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} bs ; melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} version --all ; echo "y"
