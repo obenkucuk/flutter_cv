@@ -1,3 +1,7 @@
+## 1.0.26
+
+ - **FIX**: deploy yazan mesaj.
+
 ## 1.0.25
 
  - **FIX**: tag mesah changes.
