@@ -22,6 +22,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: 🏷️🧪 Get previous tag from GitHub tags
+        id: get_latest_dev_release
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        with:
+          fallback: 1.0.0
+
       - name: 📦🚀 Calculate android package id and fvm flutter version
         id: version
         run: |
@@ -31,9 +37,8 @@ jobs:
           echo "Commit Message: $GITHUB_COMMIT_MESSAGE"
           echo "Commit Author: ${{ github.event.head_commit.message }}"
           echo -------
-          echo 'annotation<<EOF'
-          git for-each-ref "${GITHUB_REF}" --format '%(contents)'
-          echo 'EOF'
+          last_dev_release=$(echo "${{ steps.get_latest_dev_release.outputs.tag }}" | sed -E "s/release\/(.*)/\1/")
+          echo "${{ steps.get_latest_dev_release.outputs.tag }}"
 
       - name: ⚙️ Setup Java
         uses: actions/setup-java@v3
