@@ -1,3 +1,7 @@
+## 1.0.21
+
+ - **FIX**: ANANI.
+
 ## 1.0.20
 
  - **FIX**: son etiket mesajı fix.

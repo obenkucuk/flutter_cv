@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v1.0.21`](#cv---v1021)
+
+---
+
+#### `cv` - `v1.0.21`
+
+ - **FIX**: ANANI.
+
+
+## 2024-03-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v1.0.20`](#cv---v1020)
 
 ---
