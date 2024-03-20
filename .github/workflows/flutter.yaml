@@ -38,7 +38,7 @@ jobs:
         id: latest_tag_info
         run: |
           latest_tag=$(git tag -l --sort=-version:refname | head -n1)
-          tag_info=$(git tag -l --sort=-version:refname --format '%(message)' | head -n1)
+          tag_info=$(git for-each-ref --format '%(contents)' refs/tags/$latest_tag)
           latest_commit_message=$(git log --format=%B -n 1 $latest_tag)
 
           echo "latest_tag=$latest_tag" >> $GITHUB_OUTPUT
