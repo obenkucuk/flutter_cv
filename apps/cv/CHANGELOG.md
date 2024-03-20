@@ -1,3 +1,7 @@
+## 1.0.25
+
+ - **FIX**: tag mesah changes.
+
 ## 1.0.24
 
  - **FIX**: cmmt message.
