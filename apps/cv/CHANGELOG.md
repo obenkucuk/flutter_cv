@@ -1,3 +1,7 @@
+## 1.0.19
+
+ - **FIX**: AMK.
+
 ## 1.0.18
 
  - **FIX**: tag mesaj tekrar ayarlandı.
