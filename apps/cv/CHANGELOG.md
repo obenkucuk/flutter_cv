@@ -1,3 +1,7 @@
+## 1.0.17
+
+ - **FIX**: niye çalışmadı.
+
 ## 1.0.16
 
  - **FIX**: tag message deneme.
