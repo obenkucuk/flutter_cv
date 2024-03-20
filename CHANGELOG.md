@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v1.0.16`](#cv---v1016)
+
+---
+
+#### `cv` - `v1.0.16`
+
+ - **FIX**: tag message deneme.
+
+
+## 2024-03-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v1.0.15`](#cv---v1015)
 
 ---
