@@ -5,6 +5,8 @@
 
 name: Dart
 
+permissions: write-all
+
 on:
   push:
     branches: ["main"]
