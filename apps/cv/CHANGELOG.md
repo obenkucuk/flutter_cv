@@ -1,3 +1,7 @@
+## 1.0.10
+
+ - **FIX**(deploy): deploy deneme.
+
 ## 1.0.9
 
  - **FIX**(deploy): tag deneme.
