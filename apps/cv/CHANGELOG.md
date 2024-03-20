@@ -1,3 +1,8 @@
+## 1.0.6
+
+ - **FIX**: amk pods u.
+ - **FIX**: ios project fix.
+
 ## 1.0.5
 
  - **FIX**: patch deneme.
