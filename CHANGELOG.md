@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v1.0.45`](#cv---v1045)
+
+---
+
+#### `cv` - `v1.0.45`
+
+ - **FIX**: alpha deploy 2.
+
+
+## 2024-03-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v1.0.44`](#cv---v1044)
 
 ---
