@@ -1,3 +1,7 @@
+## 1.0.35
+
+ - **FIX**: actions yeniden.
+
 ## 1.0.34
 
  - **FIX**: deploy deneme 7.
