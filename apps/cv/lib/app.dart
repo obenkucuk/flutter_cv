@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -57,6 +58,8 @@ class MyApp extends ConsumerWidget {
 class CustomScrollBehaviour extends ScrollBehavior {
   @override
   ScrollPhysics getScrollPhysics(BuildContext context) {
+    if (kIsWeb) return super.getScrollPhysics(context);
+
     if (Platform.isAndroid) {
       return const BouncingScrollPhysics(
         parent: AlwaysScrollableScrollPhysics(),

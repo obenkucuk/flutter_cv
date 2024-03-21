@@ -1,6 +1,6 @@
 # cv
 
-A new Flutter project.
+obenkucuk.cv
 
 ## Getting Started
 

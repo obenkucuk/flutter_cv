@@ -16,7 +16,19 @@ void main() async {
 
   final packageInfo = await PackageInfo.fromPlatform();
 
-  final firebase = await Firebase.initializeApp();
+  final firebase = !kIsWeb
+      ? await Firebase.initializeApp()
+      : await Firebase.initializeApp(
+          options: const FirebaseOptions(
+            apiKey: 'AIzaSyD0Ga_rTkdy-O7dyk_tP3peVtH5vuw0Mwk',
+            appId: '1:119079047250:web:1b2103f90c00cbcf308f8b',
+            messagingSenderId: '119079047250',
+            projectId: 'obenkucuk-cv-prod',
+            measurementId: 'G-TPKX6FSW72',
+            authDomain: 'obenkucuk-cv-prod.firebaseapp.com',
+            storageBucket: 'obenkucuk-cv-prod.appspot.com',
+          ),
+        );
 
   // ignore: avoid_print
   print(
@@ -27,6 +39,31 @@ void main() async {
     flavor: Flavors.PRODUCTION,
     name: 'Github CV',
   );
+
+  ErrorWidget.builder = (FlutterErrorDetails errorDetails) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Error'),
+        ),
+        body: const Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.error_outline_outlined,
+                color: Colors.red,
+                size: 100,
+              ),
+              Text(
+                'Oops... something went wrong',
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  };
 
   runApp(
     const ProviderScope(child: MyApp(flavorModel: flavorModel)),
