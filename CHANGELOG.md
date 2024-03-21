@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v1.0.34`](#cv---v1034)
+
+---
+
+#### `cv` - `v1.0.34`
+
+ - **FIX**: deploy deneme 7.
+
+
+## 2024-03-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v1.0.33`](#cv---v1033)
 
 ---
