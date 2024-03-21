@@ -1,3 +1,7 @@
+## 1.0.32
+
+ - **FIX**: deploy deneme 6.
+
 ## 1.0.31
 
  - **FIX**: bir diğer deneme.
