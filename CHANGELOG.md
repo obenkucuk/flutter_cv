@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v1.0.31`](#cv---v1031)
+
+---
+
+#### `cv` - `v1.0.31`
+
+ - **FIX**: bir diğer deneme.
+
+
+## 2024-03-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v1.0.30`](#cv---v1030)
 
 ---
