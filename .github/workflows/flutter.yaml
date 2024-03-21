@@ -121,13 +121,13 @@ jobs:
 
       - name: 🤖📦 Create Android PRODUCTION appbundle release
         run: |
-          pushd app
+          pushd apps/cv
           mkdir debug-symbols
           flutter gen-l10n
           flutter build appbundle \
             --release \
             --flavor production \
-            --target apps/cv/lib/main_production.dart
+            --target lib/main_production.dart
           popd
 
       - name: 🤖🚀 Upload Android PRODUCTION Release to Play Store
