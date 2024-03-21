@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -33,23 +34,29 @@ class MyApp extends ConsumerWidget {
       color: flavorModel.flavor.bannerColor,
     );
 
-    return CustomPaint(
-      foregroundPainter: flavorModel.flavor.debugShowCheckedModeBanner ? bannerPainter : null,
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: flavorModel.flavor.debugShowCheckedModeBanner,
-        routerConfig: goRouter,
-        title: flavorModel.name,
-        theme: myThemeState.myThemeData.light,
-        darkTheme: myThemeState.myThemeData.dark,
-        themeMode: myThemeState.themeMode,
-        themeAnimationCurve: Curves.easeInOutCubicEmphasized,
-        themeAnimationDuration: const Duration(milliseconds: 500),
-        builder: (context, child) {
-          return ScrollConfiguration(
-            behavior: CustomScrollBehaviour(),
-            child: child ?? const SizedBox.shrink(),
-          );
-        },
+    return AnnotatedRegion(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+      child: CustomPaint(
+        foregroundPainter: flavorModel.flavor.debugShowCheckedModeBanner ? bannerPainter : null,
+        child: MaterialApp.router(
+          debugShowCheckedModeBanner: flavorModel.flavor.debugShowCheckedModeBanner,
+          routerConfig: goRouter,
+          title: flavorModel.name,
+          theme: myThemeState.myThemeData.light,
+          darkTheme: myThemeState.myThemeData.dark,
+          themeMode: myThemeState.themeMode,
+          themeAnimationCurve: Curves.easeInOutCubicEmphasized,
+          themeAnimationDuration: const Duration(milliseconds: 500),
+          builder: (context, child) {
+            return ScrollConfiguration(
+              behavior: CustomScrollBehaviour(),
+              child: child ?? const SizedBox.shrink(),
+            );
+          },
+        ),
       ),
     );
   }
