@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v1.0.48`](#cv---v1048)
+
+---
+
+#### `cv` - `v1.0.48`
+
+ - **FIX**: scroll physics change.
+
+
+## 2024-03-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v1.0.47`](#cv---v1047)
 
 ---

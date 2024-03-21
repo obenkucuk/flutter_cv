@@ -1,3 +1,7 @@
+## 1.0.48
+
+ - **FIX**: scroll physics change.
+
 ## 1.0.47
 
  - **FIX**: internal deploy.
