@@ -1,3 +1,7 @@
+## 1.0.46
+
+ - **FIX**: alpha deploy 3.
+
 ## 1.0.45
 
  - **FIX**: alpha deploy 2.
