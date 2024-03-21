@@ -1,3 +1,7 @@
+## 1.0.28
+
+ - **FIX**: deploy deneme 2.
+
 ## 1.0.27
 
  - **FIX**: deploy deneme.
