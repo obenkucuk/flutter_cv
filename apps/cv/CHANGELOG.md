@@ -1,3 +1,9 @@
+## 2.0.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **FIX**: native splash added.
+
 ## 1.0.49
 
  - **FIX**: about view scroll physics.
