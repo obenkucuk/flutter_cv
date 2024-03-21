@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v1.0.42`](#cv---v1042)
+
+---
+
+#### `cv` - `v1.0.42`
+
+ - **FIX**: deploy 14.
+
+
+## 2024-03-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v1.0.41`](#cv---v1041)
 
 ---
