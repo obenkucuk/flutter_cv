@@ -7,10 +7,15 @@ name: Dart
 
 permissions: write-all
 
+# on:
+#   push:
+#     tags:
+#       - "*"
+
 on:
   push:
-    tags:
-      - "*"
+    branches:
+      - "main"
 
 jobs:
   Bu_sadece_isim:
@@ -51,46 +56,46 @@ jobs:
         run: |
           echo "Variable does not contain the desired value."
           # Farklı işlemlerinizi buraya ekleyin...
+      # ------------
+      - name: 📦🚀 Calculate android package id and fvm flutter version
+        id: version
+        run: |
+          flutter=$(./scripts/fvm_version.sh)
+          echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
 
-      # - name: 📦🚀 Calculate android package id and fvm flutter version
-      #   id: version
-      #   run: |
-      #     flutter=$(./scripts/fvm_version.sh)
-      #     echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
+      - name: ⚙️ Setup Java
+        uses: actions/setup-java@v3
+        id: java
+        with:
+          distribution: "zulu"
+          java-version: "12.x"
+          cache: "gradle"
 
-      # - name: ⚙️ Setup Java
-      #   uses: actions/setup-java@v3
-      #   id: java
-      #   with:
-      #     distribution: "zulu"
-      #     java-version: "12.x"
-      #     cache: "gradle"
+      - name: ⚙️ Setup Flutter
+        uses: subosito/flutter-action@v2
+        id: flutter
+        with:
+          flutter-version: ${{ steps.version.outputs.flutter }}
+          channel: "stable"
+          cache: true
 
-      # - name: ⚙️ Setup Flutter
-      #   uses: subosito/flutter-action@v2
-      #   id: flutter
-      #   with:
-      #     flutter-version: ${{ steps.version.outputs.flutter }}
-      #     channel: "stable"
-      #     cache: true
+      - name: Get Flutter SDK Path
+        id: flutter_path
+        run: |
+          FLUTTER_PATH=$(which flutter)
+          FLUTTER_DIR=$(dirname $(dirname $FLUTTER_PATH))
+          echo "flutter_directory=$FLUTTER_DIR" >> $GITHUB_OUTPUT
 
-      # - name: Get Flutter SDK Path
-      #   id: flutter_path
-      #   run: |
-      #     FLUTTER_PATH=$(which flutter)
-      #     FLUTTER_DIR=$(dirname $(dirname $FLUTTER_PATH))
-      #     echo "flutter_directory=$FLUTTER_DIR" >> $GITHUB_OUTPUT
+      - name: 📦🚀 Install Melos
+        id: melos
+        run: |
+          flutter pub global activate melos
 
-      # - name: 📦🚀 Install Melos
-      #   id: melos
-      #   run: |
-      #     flutter pub global activate melos
-
-      # - name: 📦🚀 Install Melos
-      #   id: melos_version
-      #   run: |
-      #     melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} bs ; melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} version --all ; echo "y"
-
+      - name: 📦🚀 Install Melos
+        id: melos_version
+        run: |
+          melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} bs ; melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} version --all ; echo "y"
+      # ------------
   deployAndroid:
     name: 🤖📦🚀 Build & deploy Android PRODUCTION release
     environment: production
