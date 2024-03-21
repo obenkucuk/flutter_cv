@@ -155,7 +155,7 @@ jobs:
 
       - name: 🤖🚀 Upload Android PRODUCTION Release to Play Store
         id: upload_play_store
-        uses: r0adkll/upload-google-play@v1.1.3
+        uses: r0adkll/upload-google-play@v1.0.19
         with:
           packageName: ${{ steps.calculate_package_id.outputs.package_id }}
           track: internal
