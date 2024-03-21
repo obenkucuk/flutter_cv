@@ -8,7 +8,8 @@
       "name": "Launch CV Development",
       "request": "launch",
       "type": "dart",
-      "program": "apps/cv/lib/main_development.dart",
+      "cwd": "apps/cv",
+      "program": "lib/main_development.dart",
       "args": [
         "--flavor",
         "development",
@@ -21,7 +22,8 @@
       "name": "Launch CV Staging",
       "request": "launch",
       "type": "dart",
-      "program": "apps/cv/lib/main_staging.dart",
+      "cwd": "apps/cv",
+      "program": "lib/main_staging.dart",
       "args": ["--flavor", "staging", "--target", "lib/main_staging.dart"]
     },
 
@@ -29,7 +31,8 @@
       "name": "Launch CV Production",
       "request": "launch",
       "type": "dart",
-      "program": "apps/cv/lib/main_production.dart",
+      "cwd": "apps/cv",
+      "program": "lib/main_production.dart",
       // "flutterMode": "release",
       "flutterMode": "debug",
       "args": ["--flavor", "production", "--target", "lib/main_production.dart"]

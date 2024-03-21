@@ -10,6 +10,7 @@ class MySelectableText extends StatelessWidget {
     this.maxLines = 1,
     this.style,
     this.textAlign,
+    this.scrollPhysics = const NeverScrollableScrollPhysics(),
   });
 
   final String data;
@@ -18,6 +19,7 @@ class MySelectableText extends StatelessWidget {
   final int? maxLines;
   final TextStyle? style;
   final TextAlign? textAlign;
+  final ScrollPhysics scrollPhysics;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,7 @@ class MySelectableText extends StatelessWidget {
       maxLines: maxLines,
       style: style,
       textAlign: textAlign,
+      scrollPhysics: scrollPhysics,
     );
 
     return isExpanded ? Expanded(flex: flex, child: child) : child;

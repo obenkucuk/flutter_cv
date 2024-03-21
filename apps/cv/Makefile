@@ -16,7 +16,7 @@ deploy-web:
 	flutter pub get
 
 	@echo "Building for web..."
-	flutter build web --base-href $(BASE_HREF) --release --release --target lib/main_production.dart
+	flutter build web --base-href $(BASE_HREF) --target lib/main_production.dart --web-renderer canvaskit --release
 
 	@echo "Creating CNAME file..."
 	echo "$(CUSTOM_DOMAIN)" > build/web/CNAME
