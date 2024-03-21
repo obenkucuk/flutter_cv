@@ -158,7 +158,7 @@ jobs:
         uses: r0adkll/upload-google-play@v1.0.19
         with:
           packageName: ${{ steps.calculate_package_id.outputs.package_id }}
-          track: alpha
+          track: internal
           status: completed
           releaseFiles: ${{ github.workspace }}/apps/cv/build/app/outputs/bundle/productionRelease/app-production-release.aab
           serviceAccountJsonPlainText: "${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_KEY_JSON_BASE64 }}"
