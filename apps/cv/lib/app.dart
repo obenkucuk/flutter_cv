@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -41,7 +43,28 @@ class MyApp extends ConsumerWidget {
         themeMode: myThemeState.themeMode,
         themeAnimationCurve: Curves.easeInOutCubicEmphasized,
         themeAnimationDuration: const Duration(milliseconds: 500),
+        builder: (context, child) {
+          return ScrollConfiguration(
+            behavior: CustomScrollBehaviour(),
+            child: child ?? const SizedBox.shrink(),
+          );
+        },
       ),
     );
+  }
+}
+
+class CustomScrollBehaviour extends ScrollBehavior {
+  @override
+  ScrollPhysics getScrollPhysics(BuildContext context) {
+    if (Platform.isAndroid) {
+      return const BouncingScrollPhysics(
+        parent: AlwaysScrollableScrollPhysics(),
+      );
+    } else if (Platform.isIOS) {
+      return super.getScrollPhysics(context);
+    } else {
+      return super.getScrollPhysics(context);
+    }
   }
 }
