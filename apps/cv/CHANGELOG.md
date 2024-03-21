@@ -1,3 +1,7 @@
+## 1.0.33
+
+ - **FIX**: flutter gurma.
+
 ## 1.0.32
 
  - **FIX**: deploy deneme 6.
