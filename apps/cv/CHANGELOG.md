@@ -1,3 +1,8 @@
+## 1.0.49
+
+ - **FIX**: about view scroll physics.
+ - **FIX**: web firebase added.
+
 ## 1.0.48
 
  - **FIX**: scroll physics change.
