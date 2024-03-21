@@ -1,3 +1,7 @@
+## 1.0.27
+
+ - **FIX**: deploy deneme.
+
 ## 1.0.26
 
  - **FIX**: deploy yazan mesaj.

@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-03-21
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`cv` - `v1.0.27`](#cv---v1027)
+
+---
+
+#### `cv` - `v1.0.27`
+
+ - **FIX**: deploy deneme.
+
+
 ## 2024-03-20
 
 ### Changes
