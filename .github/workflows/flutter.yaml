@@ -127,7 +127,7 @@ jobs:
           flutter build appbundle \
             --release \
             --flavor production \
-            --target lib/main_production.dart
+            --target apps/cv/lib/main_production.dart
           popd
 
       - name: 🤖🚀 Upload Android PRODUCTION Release to Play Store
