@@ -52,27 +52,27 @@ jobs:
           echo "Variable does not contain the desired value."
           # Farklı işlemlerinizi buraya ekleyin...
 
-      - name: 📦🚀 Calculate android package id and fvm flutter version
-        id: version
-        run: |
-          flutter=$(./scripts/fvm_version.sh)
-          echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
+      # - name: 📦🚀 Calculate android package id and fvm flutter version
+      #   id: version
+      #   run: |
+      #     flutter=$(./scripts/fvm_version.sh)
+      #     echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
 
-      - name: ⚙️ Setup Java
-        uses: actions/setup-java@v3
-        id: java
-        with:
-          distribution: "zulu"
-          java-version: "12.x"
-          cache: "gradle"
+      # - name: ⚙️ Setup Java
+      #   uses: actions/setup-java@v3
+      #   id: java
+      #   with:
+      #     distribution: "zulu"
+      #     java-version: "12.x"
+      #     cache: "gradle"
 
-      - name: ⚙️ Setup Flutter
-        uses: subosito/flutter-action@v2
-        id: flutter
-        with:
-          flutter-version: ${{ steps.version.outputs.flutter }}
-          channel: "stable"
-          cache: true
+      # - name: ⚙️ Setup Flutter
+      #   uses: subosito/flutter-action@v2
+      #   id: flutter
+      #   with:
+      #     flutter-version: ${{ steps.version.outputs.flutter }}
+      #     channel: "stable"
+      #     cache: true
 
       # - name: Get Flutter SDK Path
       #   id: flutter_path
@@ -100,6 +100,28 @@ jobs:
         uses: actions/checkout@v3
 
       - name: 📦🚀 Calculate android package id and fvm flutter version
+        id: version
+        run: |
+          flutter=$(./scripts/fvm_version.sh)
+          echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
+
+      - name: ⚙️ Setup Java
+        uses: actions/setup-java@v3
+        id: java
+        with:
+          distribution: "zulu"
+          java-version: "12.x"
+          cache: "gradle"
+
+      - name: ⚙️ Setup Flutter
+        uses: subosito/flutter-action@v2
+        id: flutter
+        with:
+          flutter-version: ${{ steps.version.outputs.flutter }}
+          channel: "stable"
+          cache: true
+
+      - name: 📦🚀 Calculate android package id
         id: calculate_package_id
         run: |
           package_id="com.obenkucuk.cv"
