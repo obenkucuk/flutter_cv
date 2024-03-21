@@ -162,7 +162,7 @@ jobs:
           status: draft
           releaseFiles: ${{ github.workspace }}/apps/cv/build/app/outputs/bundle/productionRelease/app-production-release.aab
           serviceAccountJsonPlainText: "${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_KEY_JSON_BASE64 }}"
-          changesNotSentForReview: true
+          # changesNotSentForReview: true
 #       - name: 💬 Pick a random success catchphrase
 #         if: success()
 #         id: success_catchphrase
