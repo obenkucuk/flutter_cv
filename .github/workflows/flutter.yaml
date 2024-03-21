@@ -26,18 +26,18 @@ jobs:
         id: latest_tag_info
         run: |
           latest_tag=$(git tag -l --sort=-version:refname | head -n1)
-          tag_info=$(git for-each-ref --format '%(contents)' refs/tags/$latest_tag)
+          tag_message=$(git for-each-ref --format '%(contents)' refs/tags/$latest_tag)
           latest_commit_message=$(git log --format=%B -n 1 $latest_tag)
 
           echo "latest_tag=$latest_tag" >> $GITHUB_OUTPUT
-          echo "tag_info=$tag_info" >> $GITHUB_OUTPUT
+          echo "tag_message=$tag_message" >> $GITHUB_OUTPUT
           echo "latest_commit_message=$latest_commit_message" >> $GITHUB_OUTPUT
 
       - name: Use the outputs
         run: |
           echo "Son Etiket: ${{ steps.latest_tag_info.outputs.latest_tag }}"
           echo ----
-          echo "Son Etiketin Mesajı: ${{ steps.latest_tag_info.outputs.tag_info }}"
+          echo "Son Etiketin Mesajı: ${{ steps.latest_tag_info.outputs.tag_message }}"
           echo ----
           echo "Son Commit Mesajı: ${{ steps.latest_tag_info.outputs.latest_commit_message }}"
 
@@ -58,21 +58,21 @@ jobs:
           flutter=$(./scripts/fvm_version.sh)
           echo "flutter_version=$flutter" >> $GITHUB_OUTPUT
 
-      # - name: ⚙️ Setup Java
-      #   uses: actions/setup-java@v3
-      #   id: java
-      #   with:
-      #     distribution: "zulu"
-      #     java-version: "12.x"
-      #     cache: "gradle"
+      - name: ⚙️ Setup Java
+        uses: actions/setup-java@v3
+        id: java
+        with:
+          distribution: "zulu"
+          java-version: "12.x"
+          cache: "gradle"
 
-      # - name: ⚙️ Setup Flutter
-      #   uses: subosito/flutter-action@v2
-      #   id: flutter
-      #   with:
-      #     flutter-version: ${{ steps.version.outputs.flutter }}
-      #     channel: "stable"
-      #     cache: true
+      - name: ⚙️ Setup Flutter
+        uses: subosito/flutter-action@v2
+        id: flutter
+        with:
+          flutter-version: ${{ steps.version.outputs.flutter }}
+          channel: "stable"
+          cache: true
 
       # - name: Get Flutter SDK Path
       #   id: flutter_path
@@ -90,3 +90,90 @@ jobs:
       #   id: melos_version
       #   run: |
       #     melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} bs ; melos --sdk-path ${{ steps.flutter_path.outputs.flutter_directory }} version --all ; echo "y"
+
+  deployAndroid:
+    name: 🤖📦🚀 Build & deploy Android PRODUCTION release
+    environment: production
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 📦🚀 Calculate android package id and fvm flutter version
+        id: calculate_package_id
+        run: |
+          package_id="com.obenkucuk.cv"
+          echo "package_id=$package_id" >> $GITHUB_OUTPUT
+
+      - name: 🔐 Retrieve base64 keystore and decode it to a file
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_FILE_BASE64 }}
+        run: echo $KEYSTORE_BASE64 | base64 --decode > "${{ github.workspace }}/upload-keystore-production.jks"
+
+      - name: 📝🔐 Create key.properties file
+        env:
+          KEYSTORE_PROPERTIES_PATH: ${{ github.workspace }}/apps/cv/android/key.properties
+        run: |
+          echo storeFileProduction=${{ github.workspace }}/upload-keystore-production.jks' > $KEYSTORE_PROPERTIES_PATH
+          echo keyAliasProduction=${{ secrets.KEYSTORE_KEY_ALIAS }}' >> $KEYSTORE_PROPERTIES_PATH
+          echo storePasswordProduction=${{ secrets.KEYSTORE_PASSWORD }}' >> $KEYSTORE_PROPERTIES_PATH
+          echo keyPasswordProduction=${{ secrets.KEYSTORE_KEY_PASSWORD }}' >> $KEYSTORE_PROPERTIES_PATH
+
+      - name: 🤖📦 Create Android PRODUCTION appbundle release
+        run: |
+          pushd app
+          mkdir debug-symbols
+          flutter gen-l10n
+          flutter build appbundle \
+            --release \
+            --flavor production \
+            --target lib/main_production.dart
+          popd
+
+      - name: 🤖🚀 Upload Android PRODUCTION Release to Play Store
+        id: upload_play_store
+        uses: r0adkll/upload-google-play@v1.1.3
+        with:
+          packageName: ${{ steps.calculate_package_id.outputs.package_id }}
+          track: internal
+          status: "completed"
+          releaseFiles: ${{ github.workspace }}/apps/cv/build/app/outputs/bundle/productionRelease/app-production-release.aab
+          serviceAccountJsonPlainText: "${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_KEY_JSON_BASE64 }}"
+          # changesNotSentForReview: true
+#       - name: 💬 Pick a random success catchphrase
+#         if: success()
+#         id: success_catchphrase
+#         run: |
+#           sentences=('🤩 AMAZING !' 'Woop woop 🎉' 'Oh wow 😮' '😎 Yeahhhh !' '📣 Amazing announcement !' '📢 Your attention please...' '👏 Great work !' '🍾 Champagne !' '🙌 High five !' '🥳 Time to celebrate !')
+#           arrayLength=${#sentences[@]}
+#           randomNumber=$(($RANDOM%$arrayLength))
+#           pickedSentence=${sentences[$randomNumber]}
+#           echo "picked_sentence=$pickedSentence" >> $GITHUB_OUTPUT
+#       - name: 🔔✅ Send success notif to Discord
+#         if: success()
+#         uses: sarisia/actions-status-discord@v1
+#         with:
+#           webhook: ${{ secrets.DISCORD_DEPLOYMENT_WEBHOOK_URL }}
+#           avatar_url: ${{ vars.DISCORD_DEPLOYMENT_WEBHOOK_AVATAR_SUCCESS }}
+#           username: "Android Notifier"
+#           content: "${{ vars.DISCORD_SUCCESS_USER_TAG }} ${{ steps.success_catchphrase.outputs.picked_sentence }}"
+#           title: "🤖 New version is available on Android!"
+#           description: |
+#             Version `${{ inputs.new-pubspec-version }}:${{ inputs.environment-name }}`
+#           nofail: true
+#           nodetail: true
+#       - name: 🔔❌ Send failure notif to Discord
+#         if: failure()
+#         uses: sarisia/actions-status-discord@v1
+#         with:
+#           webhook: ${{ secrets.DISCORD_DEPLOYMENT_WEBHOOK_URL }}
+#           avatar_url: ${{ vars.DISCORD_DEPLOYMENT_WEBHOOK_AVATAR_FAILURE }}
+#           username: "Android Notifier"
+#           content: "${{ vars.DISCORD_FAILURE_USER_TAG }} Oh no 😢"
+#           title: "🤖 Release of ${{ inputs.environment-name }} has failed..."
+#           description: |
+#             Failed job: 🍏📦🚀 Build & deploy Android ${{ inputs.environment-name }} release
+#             Failed to release version `${{ inputs.new-pubspec-version }}` of ${{ inputs.environment-name }}
+#           nofail: true
+#           nodetail: true
+# ###

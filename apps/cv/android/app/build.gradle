@@ -23,6 +23,12 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 android {
     namespace "com.obenkucuk.cv"
     compileSdk flutter.compileSdkVersion
@@ -53,21 +59,35 @@ android {
         versionName flutterVersionName
     }
 
-       flavorDimensions "default"
+    signingConfigs {
+        stagingRelease {
+           keyAlias keystoreProperties['keyAliasStaging']
+           keyPassword keystoreProperties['keyPasswordStaging']
+           storeFile keystoreProperties['storeFileStaging'] ? file(keystoreProperties['storeFileStaging']) : null
+           storePassword keystoreProperties['storePasswordStaging']
+       }
+       productionRelease {
+           keyAlias keystoreProperties['keyAliasProduction']
+           keyPassword keystoreProperties['keyPasswordProduction']
+           storeFile keystoreProperties['storeFileProduction'] ? file(keystoreProperties['storeFileProduction']) : null
+           storePassword keystoreProperties['storePasswordProduction']
+       }
+    }
+
+    flavorDimensions "default"
     
     productFlavors {
         production {
             dimension "default"
             resValue "string", "app_name","obenkucuk CV"
             applicationIdSuffix ""
-            // signingConfig signingConfigs.productionRelease
-           
+            signingConfig signingConfigs.productionRelease  
         }
         staging {
             dimension "default"
             resValue "string", "app_name","obenkucuk CV Stg"
             applicationIdSuffix ".stg"
-            // signingConfig signingConfigs.stagingRelease
+            signingConfig signingConfigs.stagingRelease
             versionNameSuffix "-stg"
         }
         development {
