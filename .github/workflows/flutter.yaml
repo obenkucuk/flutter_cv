@@ -159,7 +159,7 @@ jobs:
         with:
           packageName: ${{ steps.calculate_package_id.outputs.package_id }}
           track: internal
-          status: "completed"
+          status: draft
           releaseFiles: ${{ github.workspace }}/apps/cv/build/app/outputs/bundle/productionRelease/app-production-release.aab
           serviceAccountJsonPlainText: "${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_KEY_JSON_BASE64 }}"
           # changesNotSentForReview: true
