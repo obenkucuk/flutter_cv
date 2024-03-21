@@ -1,3 +1,7 @@
+## 1.0.47
+
+ - **FIX**: internal deploy.
+
 ## 1.0.46
 
  - **FIX**: alpha deploy 3.
