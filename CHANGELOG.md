@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v2.0.3`](#cv---v203)
+
+---
+
+#### `cv` - `v2.0.3`
+
+ - **FIX**: android version code for ci-cd. ([bf607fd8](https://github.com/obenkucuk/flutter_cv/commit/bf607fd86a27114ae0c159dac1b06b741bc5b157))
+
+
+## 2024-03-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v2.0.2`](#cv---v202)
 
 ---

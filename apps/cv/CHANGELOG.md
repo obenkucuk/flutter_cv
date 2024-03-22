@@ -1,3 +1,7 @@
+## 2.0.3
+
+ - **FIX**: android version code for ci-cd. ([bf607fd8](https://github.com/obenkucuk/flutter_cv/commit/bf607fd86a27114ae0c159dac1b06b741bc5b157))
+
 ## 2.0.2
 
  - **FIX**: android system navigation bar color. ([2ce245b7](https://github.com/obenkucuk/flutter_cv/commit/2ce245b7b64a704902a093d0c7e8f8e8277989e4))
