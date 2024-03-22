@@ -1,11 +1,12 @@
 name: cv_monorepo_melos
+repository: https://github.com/obenkucuk/flutter_cv
 
 sdkPath: .fvm/flutter_sdk
 
 command:
   version:
     # Generate commit links in package changelogs. YORUM A EKLEME YAPTIM:
-    # linkToCommits: true
+    linkToCommits: true
     # # Only allow versioning to happen on main branch.
     branch: main
     # Additionally build a changelog at the root of the workspace.

@@ -26,7 +26,6 @@
       "program": "lib/main_staging.dart",
       "args": ["--flavor", "staging", "--target", "lib/main_staging.dart"]
     },
-
     {
       "name": "Launch CV Production",
       "request": "launch",

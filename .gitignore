@@ -50,6 +50,7 @@ app.*.map.json
 *.log
 .DS_Store
 
+# .fvm/
 
 # FVM Version Cache
-# .fvm/
+.fvm/
