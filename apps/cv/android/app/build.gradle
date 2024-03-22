@@ -29,6 +29,18 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
+//* Sikimin keyfine göre çarpıp versiyon kodunu hesaplayan fonksiyon
+def calculateVersionCode(versionName) {
+    String version = versionName.replaceAll("\\.", "");
+    int major = Character.getNumericValue(version.charAt(0));
+    int minor = Character.getNumericValue(version.charAt(1));
+    int patch = Character.getNumericValue(version.charAt(2));
+    
+    int versionCode =  (major * 100) + (minor * 10) + patch;
+    System.out.println("Sonuç: " + versionCode);
+    return versionCode;
+}
+
 android {
     namespace "com.obenkucuk.cv"
     compileSdk flutter.compileSdkVersion
@@ -48,16 +60,16 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        //* Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.obenkucuk.cv"
         multiDexEnabled true
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
-        // versionCode flutterVersionCode.toInteger()
+        versionCode calculateVersionCode(flutterVersionName)
         // versionCode flutterVersionName.replace('.','').toInteger()
-        versionCode System.getenv('BUILD_NUMBER').toInteger()
+        // versionCode System.getenv('BUILD_NUMBER').toInteger()
         versionName flutterVersionName
     }
 

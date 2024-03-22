@@ -7,15 +7,15 @@ name: Dart
 
 permissions: write-all
 
-# on:
-#   push:
-#     tags:
-#       - "*"
-
 on:
   push:
-    branches:
-      - "main"
+    tags:
+      - "*"
+
+# on:
+#   push:
+#     branches:
+#       - "main"
 
 jobs:
   Bu_sadece_isim:

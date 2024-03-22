@@ -20,7 +20,13 @@ void main() async {
 
   // ignore: avoid_print
   print(
-    'App Name: ${packageInfo.appName}, Version: ${packageInfo.version}, Bundle ID: ${packageInfo.packageName}, Firebase: ${firebase.options.apiKey}, Firebase ID: ${firebase.options.projectId}',
+    '''App Name: ${packageInfo.appName},
+    Version: ${packageInfo.version},
+    Bundle ID: ${packageInfo.packageName},
+    Firebase: ${firebase.options.apiKey},
+    Firebase ID: ${firebase.options.projectId},
+    Build Number: ${packageInfo.buildNumber}
+    ''',
   );
 
   const flavorModel = FlavorModel(

@@ -12,5 +12,7 @@ command:
     # Additionally build a changelog at the root of the workspace.
     workspaceChangelog: true
 
+    # releaseUrl: true
+
 packages:
   - apps/**
