@@ -1,3 +1,7 @@
+## 2.0.5
+
+ - **FIX**: version code update. ([9f7d350a](https://github.com/obenkucuk/flutter_cv/commit/9f7d350ad7a5120bc1c5f86c1723c4e11f13ca35))
+
 ## 2.0.4
 
  - **FIX**: version code calculate. ([fd6aef35](https://github.com/obenkucuk/flutter_cv/commit/fd6aef35d7d05350d5146f5a238d927b38e409f4))

@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v2.0.5`](#cv---v205)
+
+---
+
+#### `cv` - `v2.0.5`
+
+ - **FIX**: version code update. ([9f7d350a](https://github.com/obenkucuk/flutter_cv/commit/9f7d350ad7a5120bc1c5f86c1723c4e11f13ca35))
+
+
+## 2024-03-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v2.0.4`](#cv---v204)
 
 ---
