@@ -15,7 +15,6 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    //* Initialize ScreenUtil
     ScreenUtil.init(
       context,
       minTextAdapt: true,

@@ -35,8 +35,10 @@ def calculateVersionCode(versionName) {
     int major = Character.getNumericValue(version.charAt(0));
     int minor = Character.getNumericValue(version.charAt(1));
     int patch = Character.getNumericValue(version.charAt(2));
-    
-    int versionCode =  (major * 100) + (minor * 10) + patch;
+    System.out.println("major: " + major);
+    System.out.println("minor: " + minor);
+    System.out.println("patch: " + patch);
+    int versionCode =  (major * 1000) + (minor * 100) + patch;
     System.out.println("Sonuç: " + versionCode);
     return versionCode;
 }
