@@ -1,3 +1,7 @@
+## 2.0.4
+
+ - **FIX**: version code calculate. ([fd6aef35](https://github.com/obenkucuk/flutter_cv/commit/fd6aef35d7d05350d5146f5a238d927b38e409f4))
+
 ## 2.0.3
 
  - **FIX**: android version code for ci-cd. ([bf607fd8](https://github.com/obenkucuk/flutter_cv/commit/bf607fd86a27114ae0c159dac1b06b741bc5b157))
