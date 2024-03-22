@@ -1,7 +1,9 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../config/screen_type.dart';
+import '../../../config/theme/my_colors.dart';
 import '../widgets/desktop_mode_scaffold.dart';
 import '../widgets/mobile_mode_scaffold.dart';
 
@@ -28,23 +30,30 @@ class TabViewWithNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final screenType = ScreenType.getDeviceType(constraints);
+    return AnnotatedRegion(
+      value: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarColor: context.myColors.scaffoldBackgroundColor,
+      ),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final screenType = ScreenType.getDeviceType(constraints);
 
-        return switch (screenType) {
-          ScreenType.mobile => MobileModeScaffold(
-              currentIndex: navigationShell.currentIndex,
-              onTap: goBranch,
-              children: children,
-            ),
-          ScreenType.desktop => DesktopModeScaffold(
-              currentIndex: navigationShell.currentIndex,
-              onTap: goBranch,
-              children: children,
-            ),
-        };
-      },
+          return switch (screenType) {
+            ScreenType.mobile => MobileModeScaffold(
+                currentIndex: navigationShell.currentIndex,
+                onTap: goBranch,
+                children: children,
+              ),
+            ScreenType.desktop => DesktopModeScaffold(
+                currentIndex: navigationShell.currentIndex,
+                onTap: goBranch,
+                children: children,
+              ),
+          };
+        },
+      ),
     );
   }
 }
