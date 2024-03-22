@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-03-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`cv` - `v2.0.1`](#cv---v201)
+
+---
+
+#### `cv` - `v2.0.1`
+
+ - **FIX**: melos update. ([11b144ca](https://github.com/obenkucuk/flutter_cv/commit/11b144cac17f8aade771a426ec1c57b96aa9bdf3))
+
+
 ## 2024-03-21
 
 ### Changes

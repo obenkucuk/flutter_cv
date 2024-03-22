@@ -1,3 +1,7 @@
+## 2.0.1
+
+ - **FIX**: melos update. ([11b144ca](https://github.com/obenkucuk/flutter_cv/commit/11b144cac17f8aade771a426ec1c57b96aa9bdf3))
+
 ## 2.0.0
 
 > Note: This release has breaking changes.
