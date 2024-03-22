@@ -1,3 +1,7 @@
+## 2.0.2
+
+ - **FIX**: android system navigation bar color. ([2ce245b7](https://github.com/obenkucuk/flutter_cv/commit/2ce245b7b64a704902a093d0c7e8f8e8277989e4))
+
 ## 2.0.1
 
  - **FIX**: melos update. ([11b144ca](https://github.com/obenkucuk/flutter_cv/commit/11b144cac17f8aade771a426ec1c57b96aa9bdf3))

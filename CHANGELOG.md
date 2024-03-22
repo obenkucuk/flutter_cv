@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`cv` - `v2.0.2`](#cv---v202)
+
+---
+
+#### `cv` - `v2.0.2`
+
+ - **FIX**: android system navigation bar color. ([2ce245b7](https://github.com/obenkucuk/flutter_cv/commit/2ce245b7b64a704902a093d0c7e8f8e8277989e4))
+
+
+## 2024-03-22
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`cv` - `v2.0.1`](#cv---v201)
 
 ---
