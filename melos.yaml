@@ -3,6 +3,9 @@ repository: https://github.com/obenkucuk/flutter_cv
 
 sdkPath: .fvm/flutter_sdk
 
+# Updates the version of all packages in the workspace.
+# melos version --message="MELOS version code calculator  MESSAGE" --all
+
 command:
   version:
     # Generate commit links in package changelogs. YORUM A EKLEME YAPTIM:
